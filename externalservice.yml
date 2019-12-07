@@ -1,0 +1,9 @@
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: mumbairdsservice
+  namespace: default
+spec:
+  type: ExternalName
+  externalName: dev-rds.cjsakmdlldkm.ap-south-1.rds.amazonaws.com

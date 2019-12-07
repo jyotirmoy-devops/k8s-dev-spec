@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  sqsapppapiservice
+spec:
+  selector:
+    app:  sqsappserviceapi
+  type:  NodePort
+  ports:
+  - name:  tomcatport
+    port:  8080
+    targetPort:  8080

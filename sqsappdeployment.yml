@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sqsappserviceapi
+  labels:
+    app: sqsappserviceapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sqsappserviceapi
+  template:
+    metadata:
+      labels:
+        app: sqsappserviceapi
+    spec:
+      containers:
+      - name: sqsappserviceapi
+        image: sqsappserviceapi
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: sqsapp-storage
+          mountPath: /usr/local/tomcat
+      volumes:
+      - name: sqsapp-storage
+        emptyDir: {}
+
